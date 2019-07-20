@@ -1,17 +1,19 @@
 <template>
   <div id="app">
-    
     <Home msg="Site Under Construction"/>
+    <Nav />
   </div>
 </template>
 
 <script>
 import Home from './components/Home.vue'
+import Nav from './components/Nav.vue'
 
 export default {
   name: 'app',
   components: {
-    Home
+    Home,
+    Nav
   }
 }
 </script>
