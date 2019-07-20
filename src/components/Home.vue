@@ -15,6 +15,7 @@ export default {
 
 <style scoped>
 .home {
+  margin: -60px 0 0 0;
   background-color: rgb(82, 82, 82);
   color: white;
 }
