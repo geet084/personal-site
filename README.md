@@ -1,3 +1,4 @@
+[![Build Status](https://travis-ci.org/geet084/personal-site.svg?branch=master)](https://travis-ci.org/geet084/personal-site)
 # personal-site
 
 ## Project setup
