@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="home">
     <h1>{{ msg }}</h1>
   </div>
 </template>
@@ -14,5 +14,8 @@ export default {
 </script>
 
 <style scoped>
-
+.home {
+  background-color: rgb(82, 82, 82);
+  color: white;
+}
 </style>
