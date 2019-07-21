@@ -19,11 +19,18 @@ export default {
   justify-content: space-around;
   align-items: center;
   width: 100%;
-  background-color: darkslategray;
+  margin: 10px 0 0 0;
 }
 .links a {
   text-decoration: none;
   font-size: 1.4rem;
+  color: red;
+  border-radius: 25px;
+  padding: 0 10px;
+  filter: drop-shadow(0px 0px 6px white);
+}
+.links a:hover {
+  filter: drop-shadow(0px 0px 6px red);
   color: white;
 }
 </style>
