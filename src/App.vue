@@ -1,7 +1,8 @@
 <template>
   <div id="app">
-    <Home msg="Site Under Construction"/>
+    <Home />
     <Nav />
+    <router-view/>
   </div>
 </template>
 
