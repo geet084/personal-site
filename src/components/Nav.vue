@@ -1,16 +1,16 @@
 <template>
   <div class="links">
-    <a href="/">Home</a>
-    <a href="/bio">Bio</a>
-    <a href="/highlights">Highlights</a>
-    <a href="/contact">Contact</a>
+    <router-link to="/">Home</router-link>
+    <router-link to="/bio">Bio</router-link>
+    <router-link to="/highlights">Highlights</router-link>
+    <router-link to="/contact">Contact</router-link>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'Nav',
-}
+  name: "Nav"
+};
 </script>
 
 <style scoped>
@@ -26,5 +26,4 @@ export default {
   font-size: 1.4rem;
   color: white;
 }
-
 </style>
