@@ -9,12 +9,14 @@
 <script>
 import Header from './components/Header.vue'
 import Nav from './components/Nav.vue'
+import Home from './components/Home.vue'
 
 export default {
   name: 'app',
   components: {
     Header,
-    Nav
+    Nav,
+    Home
   }
 }
 </script>
