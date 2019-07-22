@@ -6,9 +6,9 @@ Vue.use(Router)
 export default new Router({
   routes: [
     {
-      path: '/header',
-      name: 'Header',
-      component: () => import('./components/Header.vue')
+      path: '/',
+      name: 'Home',
+      component: () => import('./components/Home.vue')
     },
     {
       path: '/bio',
