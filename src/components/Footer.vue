@@ -1,6 +1,17 @@
 <template>
   <div class="footer">
-    <span><h1>footer</h1></span>
+    <a 
+      target="_blank"
+      href="https://github.com/geet084"
+    >
+      <i class="fab fa-github"></i>
+    </a>
+    <a 
+      target="_blank"
+      href="https://www.linkedin.com/in/travis-gee/"
+    >
+      <i class="fab fa-linkedin"></i>
+    </a>
   </div>
 </template>
 
@@ -15,6 +26,14 @@ export default {
 .footer {
   position: fixed;
   bottom: 20px;
-  right: 40px;
+  right: 20px;
+}
+i {
+  color: rgb(150, 104, 104);
+  font-size: 2rem;
+  margin: 0 10px;
+}
+i:hover {
+  color: white;
 }
 </style>
