@@ -1,6 +1,6 @@
 <template>
   <nav class="links">
-    <span><router-link to="/">Home</router-link></span>
+    <span><router-link exact to="/">Home</router-link></span>
     <span><router-link to="/bio">Bio</router-link></span>
     <span><router-link to="/highlights">Highlights</router-link></span>
     <span><router-link to="/contact">Contact</router-link></span>
@@ -39,5 +39,10 @@ export default {
 .links span {
 border-radius: 30px;
 background:radial-gradient(rgba(255,255,255,.25) 15%, rgba(0,0,0,0.1) 70%);
+}
+
+.links .router-link-active {
+  filter: drop-shadow(0px 0px 6px rgb(242, 255, 0));
+  color: white;
 }
 </style>
