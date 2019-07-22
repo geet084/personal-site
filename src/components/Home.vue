@@ -1,6 +1,6 @@
 <template>
   <div class="home">
-    <h2>home home</h2>
+    <h2>Hello and welcome, my name is Travis!</h2>
   </div>
 </template>
 
@@ -12,5 +12,9 @@ export default {
 </script>
 
 <style scoped>
+.home {
+   color: rgb(242, 160, 160);
+   margin-top: 50px;
+}
 
 </style>
