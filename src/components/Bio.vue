@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1>BIO</h1>
+    <h2>BIO</h2>
   </div>
 </template>
 
