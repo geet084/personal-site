@@ -17,15 +17,41 @@
         rows="10"
         placeholder="MESSAGE"
       ></textarea>
-      <button @click.prevent="submitted">Submit</button>
+      <button @click.prevent="handleSubmit">Submit</button>
     </form>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'Contact',
-}
+  name: "Contact",
+  data() {
+    return {
+      form: {
+        email: "",
+        subject: "",
+        message: ""
+      }
+    };
+  },
+  methods: {
+    handleSubmit() {
+      let { email, subject, message } = this.form;
+
+      if (email !== "" && subject !== "" && message !== "") {
+        this.$http.post(process.env.VUE_APP_BACKEND_URL, {
+          from: email,
+          subject,
+          text: message
+        });
+
+        this.form.email = "";
+        this.form.subject = "";
+        this.form.message = "";
+      }
+    }
+  }
+};
 </script>
 
 <style scoped>

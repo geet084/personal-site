@@ -15,7 +15,7 @@ app.listen(port, () => {
 });
 
 app.post('/api/v1/mail', (req, res) => {
-  const { from, subject, text } = req.body
+  const { from, subject, text } = req.body;
 
   const nodemailer = require('nodemailer');
   const transporter = nodemailer.createTransport({
@@ -25,13 +25,13 @@ app.post('/api/v1/mail', (req, res) => {
       pass: process.env.NODEMAILER_PASS
     }
   });
-  
+
   let mailOptions = {
     to: process.env.NODEMAILER_TO,
     subject,
     text: `${from}: ${text}`,
   };
-  
+
   transporter.sendMail(mailOptions, function (error, info) {
     if (error) console.log(error);
     else console.log('Email sent: ' + info.response);
