@@ -1,9 +1,11 @@
 const express = require('express');
 const path = require('path');
 const serveStatic = require('serve-static');
+const cors = require('cors');
 require('dotenv').config({ path: __dirname + '/.env' })
 
 let app = express();
+app.use(cors())
 app.use(express.json())
 app.use(serveStatic(__dirname + "/dist"));
 
