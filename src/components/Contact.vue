@@ -1,9 +1,24 @@
 <template>
   <div class="contact">
-    <div>
+    <!-- <div>
       <h2>To get in touch with Travis:</h2>
       <h2>Email travis@travisgee.com</h2>
-    </div>
+    </div>-->
+    <form action>
+      <input v-model="form.email" id="email" type="text" placeholder="YOUR EMAIL" />
+
+      <input v-model="form.subject" id="subject" type="text" placeholder="SUBJECT" />
+
+      <textarea
+        v-model="form.message"
+        name="message"
+        id="message"
+        cols="30"
+        rows="10"
+        placeholder="MESSAGE"
+      ></textarea>
+      <button @click.prevent="submitted">Submit</button>
+    </form>
   </div>
 </template>
 
@@ -25,5 +40,4 @@ export default {
   color: rgb(250, 140, 140);
   margin: 8px;
 }
-
 </style>
