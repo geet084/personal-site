@@ -1,24 +1,31 @@
 <template>
   <div class="contact">
-    <!-- <div>
-      <h2>To get in touch with Travis:</h2>
-      <h2>Email travis@travisgee.com</h2>
-    </div>-->
-    <form action>
-      <input v-model="form.email" id="email" type="text" placeholder="YOUR EMAIL" />
+    <h2>Contact Me</h2>
+    <div class="form-container">
+      <div>
+        <form action>
+          <input
+            v-model="form.email"
+            id="email"
+            type="text"
+            placeholder="YOUR EMAIL ex: travis@gmail.com"
+          />
 
-      <input v-model="form.subject" id="subject" type="text" placeholder="SUBJECT" />
+          <input v-model="form.subject" id="subject" type="text" placeholder="SUBJECT" />
 
-      <textarea
-        v-model="form.message"
-        name="message"
-        id="message"
-        cols="30"
-        rows="10"
-        placeholder="MESSAGE"
-      ></textarea>
-      <button @click.prevent="handleSubmit">Submit</button>
-    </form>
+          <textarea
+            v-model="form.message"
+            name="message"
+            id="message"
+            cols="30"
+            rows="10"
+            placeholder="MESSAGE"
+          ></textarea>
+          <button @click.prevent="handleSubmit">Send Email</button>
+        </form>
+        <p class="post-res">{{this.postResponse}}</p>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -27,6 +34,7 @@ export default {
   name: "Contact",
   data() {
     return {
+      postResponse: "",
       form: {
         email: "",
         subject: "",
@@ -39,11 +47,13 @@ export default {
       let { email, subject, message } = this.form;
 
       if (email !== "" && subject !== "" && message !== "") {
-        this.$http.post(process.env.VUE_APP_BACKEND_URL, {
-          from: email,
-          subject,
-          text: message
-        });
+        this.$http
+          .post(process.env.VUE_APP_BACKEND_URL, {
+            from: email,
+            subject,
+            text: message
+          })
+          .then(res => (this.postResponse = res.data));
 
         this.form.email = "";
         this.form.subject = "";
@@ -56,14 +66,33 @@ export default {
 
 <style scoped>
 .contact {
+  margin-top: 25px;
+}
+.contact h2 {
+  color: rgb(201, 101, 101);
+}
+.form-container {
   display: flex;
   justify-content: center;
-  margin-top: 20%;
   width: 100vw;
   height: 100vh;
 }
-.contact h2 {
-  color: rgb(250, 140, 140);
-  margin: 8px;
+.form-container form {
+  display: flex;
+  margin-top: 20%;
+  flex-direction: column;
+  width: 200px;
+}
+.form-container form > * {
+  margin: 10px 0;
+  outline: 0;
+}
+.form-container form > *:focus {
+  outline: 0;
+  background-color: rgb(255, 220, 220);
+}
+.post-res {
+  font-size: 1.4rem;
+  color: red;
 }
 </style>
