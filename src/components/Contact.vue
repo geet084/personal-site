@@ -1,9 +1,9 @@
 <template>
-  <div class="contact">
+  <article class="contact-page">
     <h2>Contact Me</h2>
-    <div class="form-container">
-      <div>
-        <form action>
+    <section class="form-container">
+      <div class="contact-form">
+        <form>
           <input
             v-model="form.email"
             id="email"
@@ -21,12 +21,12 @@
             rows="10"
             placeholder="MESSAGE"
           ></textarea>
-          <button @click.prevent="handleSubmit">Send Email</button>
+          <button class="submit-btn" @click.prevent="handleSubmit">Send Email</button>
         </form>
         <p class="post-res">{{this.postResponse}}</p>
       </div>
-    </div>
-  </div>
+    </section>
+  </article>
 </template>
 
 <script>
@@ -65,11 +65,14 @@ export default {
 </script>
 
 <style scoped>
-.contact {
+.contact-page {
   margin-top: 25px;
 }
-.contact h2 {
-  color: rgb(201, 101, 101);
+.contact-page h2 {
+  color: rgb(182, 115, 115);
+}
+.contact-form {
+  width: 320px;
 }
 .form-container {
   display: flex;
@@ -80,6 +83,7 @@ export default {
 .form-container form {
   display: flex;
   margin-top: 20%;
+  margin: 20% auto 0;
   flex-direction: column;
   width: 200px;
 }
@@ -89,10 +93,14 @@ export default {
 }
 .form-container form > *:focus {
   outline: 0;
-  background-color: rgb(255, 220, 220);
+  background-color: rgb(255, 225, 225);
+}
+.submit-btn:hover {
+  background-color: rgb(255, 225, 225);
 }
 .post-res {
-  font-size: 1.4rem;
+  font-size: 1.1rem;
+  font-weight: 900;
   color: red;
 }
 </style>
