@@ -18,12 +18,12 @@ export default {
 <style scoped>
 .footer {
   position: fixed;
-  bottom: 20px;
-  right: 20px;
+  bottom: 30px;
+  right: 30px;
 }
 i {
-  color: rgb(150, 104, 104);
-  font-size: 2rem;
+  color: rgb(182, 115, 115);
+  font-size: 2.4rem;
   margin: 0 10px;
 }
 i:hover {
