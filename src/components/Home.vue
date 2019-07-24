@@ -1,20 +1,18 @@
 <template>
-  <div class="home">
+  <article class="home">
     <h2>Hello and welcome, my name is Travis!</h2>
-  </div>
+  </article>
 </template>
 
 <script>
-
 export default {
-  name: 'Home'
-}
+  name: "Home"
+};
 </script>
 
 <style scoped>
 .home {
-   color: rgb(242, 160, 160);
-   margin-top: 50px;
+  color: rgb(182, 115, 115);
+  margin-top: 50px;
 }
-
 </style>

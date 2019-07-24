@@ -1,25 +1,18 @@
 <template>
-  <div class="footer">
-    <a 
-      target="_blank"
-      href="https://github.com/geet084"
-    >
+  <footer class="footer">
+    <a target="_blank" href="https://github.com/geet084">
       <i class="fab fa-github"></i>
     </a>
-    <a 
-      target="_blank"
-      href="https://www.linkedin.com/in/travis-gee/"
-    >
+    <a target="_blank" href="https://www.linkedin.com/in/travis-gee/">
       <i class="fab fa-linkedin"></i>
     </a>
-  </div>
+  </footer>
 </template>
 
 <script>
-
 export default {
-  name: 'Footer'
-}
+  name: "Footer"
+};
 </script>
 
 <style scoped>

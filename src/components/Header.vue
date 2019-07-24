@@ -1,14 +1,13 @@
 <template>
-  <div class="header">
+  <header class="header">
     <h1>Site Under Construction</h1>
-  </div>
+  </header>
 </template>
 
 <script>
-
 export default {
-  name: 'Header'
-}
+  name: "Header"
+};
 </script>
 
 <style scoped>
