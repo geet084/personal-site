@@ -1,9 +1,17 @@
 <template>
   <nav class="links">
-    <span><router-link exact to="/">Home</router-link></span>
-    <span><router-link to="/bio">Bio</router-link></span>
-    <span><router-link to="/highlights">Highlights</router-link></span>
-    <span><router-link to="/contact">Contact</router-link></span>
+    <span>
+      <router-link exact to="/">Home</router-link>
+    </span>
+    <span>
+      <router-link to="/bio">Bio</router-link>
+    </span>
+    <span>
+      <router-link to="/highlights">Highlights</router-link>
+    </span>
+    <span>
+      <router-link to="/contact">Contact</router-link>
+    </span>
   </nav>
 </template>
 
@@ -22,13 +30,15 @@ export default {
   margin: 10px 0 0 0;
 }
 .links a {
+  font-family: "Skranji", cursive;
   text-decoration: none;
-  font-size: 1.4rem;
+  font-size: 2rem;
   font-weight: 500;
-  color: rgb(232, 19, 19);
+  color: rgb(182, 0, 0);
   border-radius: 25px;
   padding: 0 10px;
-  text-shadow: -0.04rem 0 black, 0 0.04rem black, 0.04rem 0 black, 0 -0.04rem black;
+  text-shadow: -0.04rem 0 black, 0 0.04rem black, 0.04rem 0 black,
+    0 -0.04rem black;
   filter: drop-shadow(0px 0px 2px rgba(255, 255, 255, 0.7));
 }
 .links a:hover {
@@ -37,12 +47,15 @@ export default {
 }
 
 .links span {
-border-radius: 30px;
-background:radial-gradient(rgba(255,255,255,.25) 15%, rgba(0,0,0,0.1) 70%);
+  border-radius: 30px;
+  background: radial-gradient(
+    rgba(255, 255, 255, 0.25) 15%,
+    rgba(0, 0, 0, 0.1) 70%
+  );
 }
 
 .links .router-link-active {
-  filter: drop-shadow(0px 0px 6px rgb(242, 255, 0));
+  filter: drop-shadow(0px 0px 6px rgb(210, 218, 54));
   color: white;
 }
 </style>
