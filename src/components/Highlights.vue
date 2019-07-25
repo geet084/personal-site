@@ -1,6 +1,5 @@
 <template>
   <article class="highlights-page">
-    <h2>HIGHLIGHTS</h2>
     <section class="projects">
       <div class="project1 project">
         <h3>Turing Mentors</h3>
@@ -28,10 +27,6 @@ export default {
 .highlights-page {
   margin-top: 25px;
 }
-.highlights-page h2 {
-  color: rgb(182, 115, 115);
-  margin-bottom: 30px;
-}
 .projects {
   display: flex;
   flex-direction: column;
@@ -41,7 +36,7 @@ export default {
 }
 .project {
   display: flex;
-  margin: 30px 0;
+  margin: 40px 0;
   align-items: center;
   justify-content: center;
   border-radius: 15px;
