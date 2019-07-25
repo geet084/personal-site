@@ -8,6 +8,9 @@
       <div class="project2 project">
         <h3>Palette Picker</h3>
       </div>
+      <div class="project3 project">
+        <h3>Travelr</h3>
+      </div>
     </section>
   </article>
 </template>
@@ -66,6 +69,10 @@ export default {
 }
 .project2:before {
   background: url("../assets/palette-picker.png") no-repeat center;
+  background-size: cover;
+}
+.project3:before {
+  background: url("../assets/travelr.png") no-repeat center;
   background-size: cover;
 }
 h3 {
