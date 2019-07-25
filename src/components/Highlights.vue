@@ -5,6 +5,9 @@
       <div class="project1 project">
         <h3>Turing Mentors</h3>
       </div>
+      <div class="project2 project">
+        <h3>Palette Picker</h3>
+      </div>
     </section>
   </article>
 </template>
@@ -59,6 +62,10 @@ export default {
 }
 .project1:before {
   background: url("../assets/turing-mentors.png") no-repeat center;
+  background-size: cover;
+}
+.project2:before {
+  background: url("../assets/palette-picker.png") no-repeat center;
   background-size: cover;
 }
 h3 {
