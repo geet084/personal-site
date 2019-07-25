@@ -11,6 +11,9 @@
       <div class="project3 project">
         <h3>Travelr</h3>
       </div>
+      <div class="project4 project">
+        <h3>Trapper Keeper</h3>
+      </div>
     </section>
   </article>
 </template>
@@ -73,6 +76,10 @@ export default {
 }
 .project3:before {
   background: url("../assets/travelr.png") no-repeat center;
+  background-size: cover;
+}
+.project4:before {
+  background: url("../assets/trapper-keeper.png") no-repeat center;
   background-size: cover;
 }
 h3 {
