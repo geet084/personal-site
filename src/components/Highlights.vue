@@ -7,9 +7,17 @@
           <span>
             <a href="https://turing-mentors.herokuapp.com/">Deployed Site</a>
             <h4>Turing Mentors</h4>
-            <a href="https://github.com/geet084/turing-mentors">GitHub page</a>
+            <a href="https://github.com/geet084/turing-mentors">GitHub Repo</a>
           </span>
-          <p>Description</p>
+          <p>
+            This project was my last one while at Turing and I collaborated with a backend student to build a fullstack application. We decided to build something that would enhance and replace the existing mentoring spreadsheet, which was clunky and not well looked after.
+          </p>
+          <p>
+            To do this, we came up with a short survey for both those seeking a mentor and those wished to become a mentor themselves. Using that information, we then filtered down the list by location (currently Denver or Remote) as well as by programming language to provide a better search experience.
+          </p>
+          <p>
+            Our next steps will be to implement a login and tracking system for users, more location and language selections, as well as an admin dashboard. 
+          </p>
         </div>
       </section>
 
@@ -19,7 +27,7 @@
           <span>
             <a href="https://palette-picker-1810.herokuapp.com/">Deployed Site</a>
             <h4>Palette Picker</h4>
-            <a href="https://github.com/geet084/fe-palette-picker">GitHub page</a>
+            <a href="https://github.com/geet084/fe-palette-picker">GitHub Repo</a>
           </span>
           <p>Description</p>
         </div>
@@ -31,7 +39,7 @@
           <span>
             <p></p>
             <h4>Palette Picker</h4>
-            <a href="https://github.com/geet084/travelr">GitHub page</a>
+            <a href="https://github.com/geet084/travelr">GitHub Repo</a>
           </span>
           <p>Description</p>
         </div>
@@ -43,7 +51,7 @@
           <span>
             <p></p>
             <h4>Palette Picker</h4>
-            <a href="https://github.com/geet084/trapper-keeper">GitHub page</a>
+            <a href="https://github.com/geet084/trapper-keeper">GitHub Repo</a>
           </span>
           <p>Description</p>
         </div>
@@ -111,6 +119,8 @@ export default {
 }
 .content p {
   margin: 10px 10px 0;
+  font-size: .85rem;
+  font-weight: 400;
 }
 
 .expanded {
