@@ -82,15 +82,15 @@ export default {
 .content {
   position: absolute;
   top: 140px;
-  left: 17%;
+  left: 19%;
   z-index: 3;
   background-color: rgb(255, 255, 255, 0.85);
   color: rgb(189, 29, 29);
   font-size: 1rem;
   font-weight: 600;
-  width: 66%;
+  width: 62%;
   overflow: scroll;
-  height: 275px;
+  height: 300px;
   border-radius: 10px;
   display: flex;
   flex-direction: column;
@@ -136,8 +136,8 @@ export default {
   content: "";
   position: absolute;
   top: 0;
-  width: 70%;
-  height: 430px;
+  width: 65%;
+  height: 460px;
   z-index: 2;
   border-radius: 15px;
 }
@@ -160,8 +160,8 @@ export default {
   border-radius: 15px;
   content: "";
   position: relative;
-  width: 100%;
-  height: 70px;
+  width: 90%;
+  height: 75px;
 }
 .project:hover {
   cursor: pointer;
