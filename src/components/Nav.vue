@@ -45,7 +45,6 @@ export default {
   filter: drop-shadow(0px 0px 6px red);
   color: white;
 }
-
 .links span {
   border-radius: 30px;
   background: radial-gradient(
@@ -53,7 +52,6 @@ export default {
     rgba(0, 0, 0, 0.1) 70%
   );
 }
-
 .links .router-link-active {
   filter: drop-shadow(0px 0px 6px rgb(210, 218, 54));
   color: white;
