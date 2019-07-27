@@ -103,7 +103,7 @@ export default {
 }
 .project {
   display: flex;
-  margin: 25px 0;
+  margin: 20px 0;
   align-items: center;
   justify-content: center;
   border-radius: 15px;

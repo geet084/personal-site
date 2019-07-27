@@ -32,7 +32,7 @@ export default {
 .links a {
   font-family: "Skranji", cursive;
   text-decoration: none;
-  font-size: 2rem;
+  font-size: 1.8rem;
   font-weight: 500;
   color: rgb(182, 0, 0);
   border-radius: 25px;
