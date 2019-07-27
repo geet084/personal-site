@@ -18,31 +18,17 @@
 
       <section @click="toggleProject" class="project4 project">
         <h3>Trapper Keeper</h3>
-        <div v-if="showProject==='project4'" class="content">
-          <span>
-            <p></p>
-            <h4>Trapper Keeper</h4>
-            <a href="https://github.com/geet084/trapper-keeper">GitHub Repo</a>
-          </span>
-          <p>
-            There are many things that Google does right and for this project we were tasked with recreating some of that functionality. Being able to create a note along with items on each note, but to do so dynamically as needed.
-          </p>
-          <p>
-            It was our first foray into building a backend server to store the data that would come from out frontend. It was also the first time that we were able to successfully implement TDD from start to finish on the server functionality.
-          </p>
-          <p>
-            On the frontend, we sought to make the interface as simple and "Google-like" as possible and found it to be challenging at times. Simple and intuitive is not an easy experience to implement, but we felt like we ended up in a really good spot in the end.
-          </p>
-        </div>
+        <Project4 v-if="showProject==='project4'" />
       </section>
     </div>
   </article>
 </template>
 
 <script>
-import Project1 from './Project1.vue'
-import Project2 from './Project2.vue'
-import Project3 from './Project3.vue'
+import Project1 from "./Project1.vue";
+import Project2 from "./Project2.vue";
+import Project3 from "./Project3.vue";
+import Project4 from "./Project4.vue";
 
 export default {
   name: "Highlights",
@@ -50,6 +36,7 @@ export default {
     Project1,
     Project2,
     Project3,
+    Project4
   },
   data() {
     return {
