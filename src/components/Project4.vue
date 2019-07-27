@@ -3,7 +3,7 @@
     <span>
       <p></p>
       <h4>Trapper Keeper</h4>
-      <a href="https://github.com/geet084/trapper-keeper">GitHub Repo</a>
+      <a target="_blank" href="https://github.com/geet084/trapper-keeper">GitHub Repo</a>
     </span>
     <p>
       There are many things that Google does right and for this project we were tasked with recreating some of that functionality. Being able to create a note along with items on each note, but to do so dynamically as needed.

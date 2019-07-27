@@ -1,9 +1,9 @@
 <template>
   <div class="content">
     <span>
-      <a href="https://palette-picker-1810.herokuapp.com/">Deployed Site</a>
+      <a target="_blank" href="https://palette-picker-1810.herokuapp.com/">Deployed Site</a>
       <h4>Palette Picker</h4>
-      <a href="https://github.com/geet084/fe-palette-picker">GitHub Repo</a>
+      <a target="_blank" href="https://github.com/geet084/fe-palette-picker">GitHub Repo</a>
     </span>
     <p>
       My first project where we developed an entire fullstack application from start to finish. Tasked with building a backend server along with using continuous integration for our API and building a frontend site that was simple and intuitive to use.

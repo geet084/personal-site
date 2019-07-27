@@ -1,9 +1,9 @@
 <template>
   <div class="content">
     <span>
-      <a href="https://turing-mentors.herokuapp.com/">Deployed Site</a>
+      <a target="_blank" href="https://turing-mentors.herokuapp.com/">Deployed Site</a>
       <h4>Turing Mentors</h4>
-      <a href="https://github.com/geet084/turing-mentors">GitHub Repo</a>
+      <a target="_blank" href="https://github.com/geet084/turing-mentors">GitHub Repo</a>
     </span>
     <p>
       This project was my last one while at Turing and I collaborated with a backend student to build a fullstack application. We decided to build something that would enhance and replace the existing mentoring spreadsheet, which was clunky and not well looked after.

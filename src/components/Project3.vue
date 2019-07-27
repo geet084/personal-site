@@ -3,7 +3,7 @@
     <span>
       <p></p>
       <h4>Travelr</h4>
-      <a href="https://github.com/geet084/travelr">GitHub Repo</a>
+      <a target="_blank" href="https://github.com/geet084/travelr">GitHub Repo</a>
     </span>
     <p>
       For my last solo project of Turing, I wanted to build an application that would illustrate time and distance in a unique way. Many people do not realize how far they are traveling every second, due to the Earth, Sun, Solar System and Galaxy all moving through space.
