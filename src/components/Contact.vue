@@ -1,18 +1,15 @@
 <template>
   <article class="contact-page">
-    <h2>Contact Me</h2>
     <section class="form-container">
       <div class="contact-form">
         <form>
           <input
-            v-model="form.email"
-            id="email"
+            v-model="form.sender"
+            id="sender"
             type="text"
             placeholder="YOUR EMAIL ex: travis@gmail.com"
           />
-
           <input v-model="form.subject" id="subject" type="text" placeholder="SUBJECT" />
-
           <textarea
             v-model="form.message"
             name="message"
@@ -36,7 +33,7 @@ export default {
     return {
       postResponse: "",
       form: {
-        email: "",
+        sender: "",
         subject: "",
         message: ""
       }
@@ -44,20 +41,18 @@ export default {
   },
   methods: {
     handleSubmit() {
-      let { email, subject, message } = this.form;
+      let { sender, subject, message } = this.form;
 
-      if (email !== "" && subject !== "" && message !== "") {
+      if (sender !== "" && subject !== "" && message !== "") {
         this.$http
           .post(process.env.VUE_APP_BACKEND_URL, {
-            from: email,
+            sender,
             subject,
-            text: message
+            message
           })
           .then(res => (this.postResponse = res.data));
 
-        this.form.email = "";
-        this.form.subject = "";
-        this.form.message = "";
+        Object.keys(this.form).forEach(key => (this.form[key] = ""));
       }
     }
   }
@@ -67,9 +62,6 @@ export default {
 <style scoped>
 .contact-page {
   margin-top: 25px;
-}
-.contact-page h2 {
-  color: rgb(182, 115, 115);
 }
 .contact-form {
   width: 320px;

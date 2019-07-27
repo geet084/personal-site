@@ -1,6 +1,6 @@
 <template>
   <header class="header">
-    <h1>Site Under Construction</h1>
+    <h1>Travis Gee</h1>
   </header>
 </template>
 
@@ -12,8 +12,11 @@ export default {
 
 <style scoped>
 .header {
-  margin: -60px 0 0 0;
-  background-color: rgb(82, 82, 82);
+  margin: -40px 0 15px 0;
+}
+h1 {
+  font-family: "Special Elite", cursive;
+  font-size: 2.6rem;
   color: white;
 }
 </style>
