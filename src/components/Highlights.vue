@@ -25,10 +25,10 @@
 </template>
 
 <script>
-import Project1 from "./Project1.vue";
-import Project2 from "./Project2.vue";
-import Project3 from "./Project3.vue";
-import Project4 from "./Project4.vue";
+import Project1 from "./projects/Project1.vue";
+import Project2 from "./projects/Project2.vue";
+import Project3 from "./projects/Project3.vue";
+import Project4 from "./projects/Project4.vue";
 
 export default {
   name: "Highlights",
