@@ -144,7 +144,7 @@ export default {
   background: url("../assets/trapper-keeper.png") no-repeat center;
   background-size: cover;
 }
-h3 {
+.project h3 {
   font-size: 1.75rem;
   font-weight: 700;
   color: white;
