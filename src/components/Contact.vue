@@ -70,7 +70,6 @@ export default {
   display: flex;
   justify-content: center;
   width: 100vw;
-  height: 100vh;
 }
 .form-container form {
   display: flex;
