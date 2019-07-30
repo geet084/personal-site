@@ -20,9 +20,9 @@ export default {
 
 <style scoped>
 .bio-page {
-  height: 500px;
-  width: 70vw;
-  margin: auto;
+  margin-top: 25px;
+  height: 470px;
+  padding: 0 15%;
   color: white;
   display: flex;
   flex-direction: column;
