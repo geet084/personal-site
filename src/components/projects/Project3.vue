@@ -1,7 +1,7 @@
 <template>
   <div class="content">
     <span>
-      <p></p>
+      <a target="_blank" href="https://travelr-fe.herokuapp.com/">Deployed Site</a>
       <h4>Travelr</h4>
       <a target="_blank" href="https://github.com/geet084/travelr">GitHub Repo</a>
     </span>
