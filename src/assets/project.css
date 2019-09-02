@@ -8,7 +8,7 @@
   font-size: 1rem;
   font-weight: 600;
   width: 62%;
-  overflow: scroll;
+  overflow: auto;
   height: 300px;
   border-radius: 10px;
   display: flex;
