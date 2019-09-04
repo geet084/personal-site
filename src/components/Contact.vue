@@ -39,6 +39,17 @@ export default {
       }
     };
   },
+  updated() {
+    const { sender, subject, message } = this.form;
+    
+    if (this.postResponse.includes("email") && sender !== "") {
+      this.postResponse = "";
+    } else if (this.postResponse.includes("subject") && subject !== "") {
+      this.postResponse = "";
+    } else if (this.postResponse.includes("message") && message !== "") {
+      this.postResponse = "";
+    }
+  },
   methods: {
     handleSubmit() {
       const { sender, subject, message } = this.form;
