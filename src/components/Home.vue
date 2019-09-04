@@ -15,11 +15,13 @@ export default {
 
 <style scoped>
 .home {
-  color: white;
-  margin-top: 25px;
-  padding: 0 15%;
+  color: rgb(255, 255, 255);
   display: flex;
   flex-direction: column;
+  height: 67vh;
+  margin-top: 25px;
+  padding: 0 15%;
+  overflow: auto;
   text-align: left;
 }
 .home h2 {
@@ -27,10 +29,18 @@ export default {
   text-align: center;
 }
 .home p {
-  color: white;
-  line-height: 1.75rem;
   background-color: rgb(255, 255, 255, 0.1);
-  padding: 15px;
   border-radius: 10px;
+  color: rgb(255, 255, 255);
+  line-height: 1.75rem;
+  padding: 15px;
+}
+@media screen and (max-width: 430px) {
+  .home {
+    display: flex;
+    margin: 25px auto 0;
+    padding: 0;
+    width: 300px;
+  }
 }
 </style>
