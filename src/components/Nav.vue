@@ -56,4 +56,7 @@ export default {
   filter: drop-shadow(0px 0px 6px rgb(210, 218, 54));
   color: white;
 }
+.links .router-link-active:hover {
+  filter: drop-shadow(0px 0px 6px rgb(255, 255, 255));
+}
 </style>
