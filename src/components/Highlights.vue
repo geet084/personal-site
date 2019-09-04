@@ -5,7 +5,7 @@
         <h3>Turing Mentors</h3>
         <Project1 v-if="showProject==='project1'" />
       </section>
-
+      
       <section @click="toggleProject" class="project2 project">
         <h3>Palette Picker</h3>
         <Project2 v-if="showProject==='project2'" />
@@ -63,12 +63,12 @@ export default {
 
 <style scoped>
 .expanded {
-  display: flex;
-  margin: 40px 0;
   align-items: center;
-  justify-content: center;
   border-radius: 15px;
   content: "";
+  display: flex;
+  justify-content: center;
+  margin: 40px 0;
   position: absolute;
   top: 100px;
   width: 100%;
@@ -77,55 +77,57 @@ export default {
   cursor: pointer;
 }
 .expanded:hover:before {
-  opacity: 1;
   box-shadow: 2px 2px 5px -1px rgba(255, 255, 255, 0.5);
+  opacity: 1;
 }
 .expanded:before {
+  border-radius: 15px;
   content: "";
+  height: 430px;
   position: absolute;
   top: 0;
   width: 65%;
-  height: 460px;
   z-index: 2;
-  border-radius: 15px;
 }
 
 .highlights-page {
+  height: 67vh;
   margin-top: 25px;
+  overflow: auto;
 }
 .projects {
+  align-items: center;
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: space-around;
   margin: 0 15%;
 }
 .project {
-  display: flex;
-  margin: 20px 0;
   align-items: center;
-  justify-content: center;
   border-radius: 15px;
   content: "";
+  display: flex;
+  height: 75px;
+  justify-content: center;
+  margin: 15px 0;
   position: relative;
   width: 90%;
-  height: 75px;
 }
 .project:hover {
   cursor: pointer;
 }
 .project:hover:before {
-  opacity: 1;
   box-shadow: 2px 2px 5px -1px rgba(255, 255, 255, 0.5);
+  opacity: 1;
 }
 .project:before {
   content: "";
+  border-radius: 15px;
+  height: 70px;
+  opacity: 0.5;
   position: absolute;
   width: 100%;
-  height: 70px;
   z-index: -1;
-  opacity: 0.5;
-  border-radius: 15px;
 }
 .project1:before {
   background: url("../assets/turing-mentors.png") no-repeat center;
@@ -144,10 +146,24 @@ export default {
   background-size: cover;
 }
 .project h3 {
+  color: rgb(255, 255, 255);
   font-size: 1.75rem;
   font-weight: 700;
-  color: white;
   text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
     1px 1px 0 #000;
+}
+
+@media screen and (max-width: 462px) {
+  .project,
+  .expanded::before {
+    width: 300px;
+  }
+  .content {
+    left: 50%;
+    margin: -49px -144px;
+    position: fixed;
+    top: 309px;
+    width: 286px;
+  }
 }
 </style>
