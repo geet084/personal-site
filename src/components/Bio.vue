@@ -32,5 +32,8 @@ export default {
 .bio-page p {
   margin: 10px 0;
   line-height: 1.75rem;
+  background-color: rgb(255, 255, 255, 0.1);
+  padding: 15px;
+  border-radius: 10px;
 }
 </style>

@@ -15,7 +15,7 @@ export default {
 
 <style scoped>
 .home {
-  color: rgb(182, 115, 115);
+  color: white;
   margin-top: 25px;
   padding: 0 15%;
   display: flex;
@@ -29,5 +29,8 @@ export default {
 .home p {
   color: white;
   line-height: 1.75rem;
+  background-color: rgb(255, 255, 255, 0.1);
+  padding: 15px;
+  border-radius: 10px;
 }
 </style>
