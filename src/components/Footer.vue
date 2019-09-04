@@ -22,11 +22,11 @@ export default {
   right: 30px;
 }
 i {
-  color: rgb(182, 115, 115);
+  color: rgb(255, 255, 255);
   font-size: 2.4rem;
   margin: 0 10px;
 }
 i:hover {
-  color: white;
+  color: rgb(182, 115, 115);
 }
 </style>
