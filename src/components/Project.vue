@@ -1,18 +1,46 @@
 <template>
-  <div class="content">
+  <div class="content" v-on:scroll="handleScrollArrows">
+    <span class="arrow top-arrow hide">▲</span>
     <span class="top">
       <a target="_blank" :href="site">Deployed Site</a>
       <h4>{{title}}</h4>
       <a target="_blank" :href="repo">GitHub Repo</a>
     </span>
     <p v-for="paragraph in paragraphs" :key="paragraph">{{ paragraph }}</p>
+    <span class="arrow btm-arrow hide">▼</span>
   </div>
 </template>
 
 <script>
 export default {
   name: "Project",
-  props: ["title", "site", "repo", "paragraphs"]
+  props: ["title", "site", "repo", "paragraphs"],
+  mounted() {
+    this.handleScrollArrows();
+  },
+  created() {
+    window.addEventListener("resize", this.handleScrollArrows);
+  },
+  destroyed() {
+    window.removeEventListener("resize", this.handleScrollArrows);
+  },
+  methods: {
+    handleScrollArrows() {
+      const content = window.document.querySelector(".content");
+      const downArrow = document.querySelector("div.content .btm-arrow");
+      const upArrow = document.querySelector("div.content .top-arrow");
+      const distToBtm = content.scrollHeight - 300 - content.scrollTop;
+      const isScrollable = content.scrollHeight > 305;
+
+      if (content.scrollTop > 22) upArrow.classList.remove("hide");
+      else upArrow.classList.add("hide");
+
+      if (isScrollable && distToBtm > 5)
+        downArrow.classList.remove("hide", "hidden");
+      else if (distToBtm <= 5) downArrow.classList.add("hidden");
+      else downArrow.classList.add("hide");
+    }
+  }
 };
 </script>
 
@@ -54,13 +82,24 @@ export default {
 .hide {
   display: none;
 }
+.hidden {
+  visibility: hidden;
+}
 .arrow {
-  color: black;
+  color: rgb(189, 29, 29);
   text-align: center;
-  border-radius: 0 0 10px 10px;
   margin: 0px;
+}
+.btm-arrow {
+  border-radius: 0 0 10px 10px;
+  box-shadow: inset 0px -20px 10px 3px rgb(242, 242, 242);
   position: sticky;
   bottom: 0px;
-  box-shadow: inset 0px -20px 10px 3px rgb(230, 228, 228);
+}
+.top-arrow {
+  border-radius: 10px 10px 0 0;
+  box-shadow: inset 0px 20px 10px -3px rgb(242, 242, 242);
+  position: sticky;
+  top: 0px;
 }
 </style>
