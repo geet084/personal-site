@@ -1,7 +1,7 @@
 const express = require('express');
-const path = require('path');
 const serveStatic = require('serve-static');
 const cors = require('cors');
+const nodemailer = require('nodemailer');
 require('dotenv').config({ path: __dirname + '/.env' })
 
 let app = express();
@@ -14,17 +14,16 @@ app.listen(port, () => {
   console.log('Listening on port ' + port)
 });
 
+const transporter = nodemailer.createTransport({
+  service: process.env.NODEMAILER_SERVICE,
+  auth: {
+    user: process.env.NODEMAILER_USER,
+    pass: process.env.NODEMAILER_PASS
+  }
+});
+
 app.post('/api/v1/mail', (req, res) => {
   const { sender, subject, message } = req.body;
-
-  const nodemailer = require('nodemailer');
-  const transporter = nodemailer.createTransport({
-    service: process.env.NODEMAILER_SERVICE,
-    auth: {
-      user: process.env.NODEMAILER_USER,
-      pass: process.env.NODEMAILER_PASS
-    }
-  });
 
   let mailOptions = {
     to: process.env.NODEMAILER_TO,
@@ -35,8 +34,7 @@ app.post('/api/v1/mail', (req, res) => {
   transporter.sendMail(mailOptions, function (error, info) {
     if (error) {
       console.log(error);
-      res.status(500).json(`Error! Your message was not sent.`);
-    }
-    else res.status(200).json('Your message was sent successfully!');
+      res.status(500).json(`Oops! Your email was not sent...`);
+    } else res.status(200).json('Success! Your email was sent!');
   });
 });
