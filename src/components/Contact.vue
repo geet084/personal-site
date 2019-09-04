@@ -61,10 +61,22 @@ export default {
 
 <style scoped>
 .contact-page {
-  margin-top: 25px;
+  margin-top: 45px;
 }
 .contact-form {
-  width: 320px;
+  background-color: rgb(255, 255, 255, 0.15);
+  padding: 15px;
+  border-radius: 10px;
+}
+.contact-form input,
+.contact-form button {
+  height: 25px;
+}
+.contact-form input {
+  padding-left: 5px;
+}
+.contact-form textarea {
+  padding: 5px 0 0 5px;
 }
 .form-container {
   display: flex;
@@ -73,20 +85,16 @@ export default {
 }
 .form-container form {
   display: flex;
-  margin-top: 20%;
-  margin: 20% auto 0;
   flex-direction: column;
-  width: 200px;
+  width: 260px;
 }
 .form-container form > * {
   margin: 10px 0;
   outline: 0;
 }
-.form-container form > *:focus {
-  outline: 0;
-  background-color: rgb(255, 225, 225);
-}
+.form-container form > *:focus,
 .submit-btn:hover {
+  outline: 0;
   background-color: rgb(255, 225, 225);
 }
 .post-res {
