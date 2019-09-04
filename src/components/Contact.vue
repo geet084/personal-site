@@ -4,8 +4,8 @@
       <div class="contact-form">
         <form>
           <input
-            v-model="form.sender"
-            id="sender"
+            v-model="form.email"
+            id="email"
             type="text"
             placeholder="YOUR EMAIL ex: travis@gmail.com"
           />
@@ -20,7 +20,7 @@
           ></textarea>
           <button class="submit-btn" @click.prevent="handleSubmit">Send Email</button>
         </form>
-        <p class="post-res">{{this.postResponse}}</p>
+        <p class="post-res">{{this.formFeedback}}</p>
       </div>
     </section>
   </article>
@@ -31,43 +31,42 @@ export default {
   name: "Contact",
   data() {
     return {
-      postResponse: "",
+      formFeedback: "",
       form: {
-        sender: "",
+        email: "",
         subject: "",
         message: ""
       }
     };
   },
   updated() {
-    const { sender, subject, message } = this.form;
-    
-    if (this.postResponse.includes("email") && sender !== "") {
-      this.postResponse = "";
-    } else if (this.postResponse.includes("subject") && subject !== "") {
-      this.postResponse = "";
-    } else if (this.postResponse.includes("message") && message !== "") {
-      this.postResponse = "";
-    }
+    const { form } = this;
+
+    Object.keys(form).forEach(input => {
+      const inputWasEmpty = this.formFeedback.includes(input);
+      const inputIsNowNotEmpty = form[input] !== "";
+
+      if (inputWasEmpty && inputIsNowNotEmpty) this.formFeedback = "";
+    });
   },
   methods: {
     handleSubmit() {
-      const { sender, subject, message } = this.form;
+      const { email, subject, message } = this.form;
       const emailWarning = "Please input your email";
       const subjectWarning = "Please input a subject";
       const messageWarning = "Please include a message";
 
-      if (sender === "") this.postResponse = emailWarning;
-      else if (subject === "") this.postResponse = subjectWarning;
-      else if (message === "") this.postResponse = messageWarning;
+      if (email === "") this.formFeedback = emailWarning;
+      else if (subject === "") this.formFeedback = subjectWarning;
+      else if (message === "") this.formFeedback = messageWarning;
       else {
         this.$http
           .post(process.env.VUE_APP_BACKEND_URL, {
-            sender,
+            sender: email,
             subject,
             message
           })
-          .then(res => (this.postResponse = res.data));
+          .then(res => (this.formFeedback = res.data));
 
         Object.keys(this.form).forEach(key => (this.form[key] = ""));
       }
