@@ -1,45 +1,37 @@
 <template>
   <article class="highlights-page">
     <div class="projects">
-      <section @click="toggleProject" class="project1 project">
-        <h3>Turing Mentors</h3>
-        <Project1 v-if="showProject==='project1'" />
-      </section>
-      
-      <section @click="toggleProject" class="project2 project">
-        <h3>Palette Picker</h3>
-        <Project2 v-if="showProject==='project2'" />
-      </section>
-
-      <section @click="toggleProject" class="project3 project">
-        <h3>Travelr</h3>
-        <project3 v-if="showProject==='project3'" />
-      </section>
-
-      <section @click="toggleProject" class="project4 project">
-        <h3>Trapper Keeper</h3>
-        <Project4 v-if="showProject==='project4'" />
+      <section
+        @click="toggleProject"
+        v-for="(project, index) in this.projects"
+        :class="`project${index + 1} project`"
+        :key="`project${index}`"
+      >
+        <h3>{{project.title}}</h3>
+        <Project
+          v-if="showProject===`project${index + 1}`"
+          :title="project.title"
+          :site="project.site"
+          :repo="project.repo"
+          :paragraphs="project.paragraphs"
+        />
       </section>
     </div>
   </article>
 </template>
 
 <script>
-import Project1 from "./projects/Project1.vue";
-import Project2 from "./projects/Project2.vue";
-import Project3 from "./projects/Project3.vue";
-import Project4 from "./projects/Project4.vue";
+import Project from "./Project";
+import projects from "../assets/projects";
 
 export default {
   name: "Highlights",
   components: {
-    Project1,
-    Project2,
-    Project3,
-    Project4
+    Project
   },
   data() {
     return {
+      projects,
       showProject: ""
     };
   },
