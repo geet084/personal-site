@@ -20,20 +20,28 @@ export default {
 
 <style scoped>
 .bio-page {
-  margin-top: 25px;
-  height: 470px;
-  padding: 0 15%;
-  color: white;
+  color: rgb(255, 255, 255);
   display: flex;
   flex-direction: column;
-  overflow: scroll;
+  height: 67vh;
+  margin-top: 25px;
+  overflow: auto;
+  padding: 0 15%;
   text-align: left;
 }
 .bio-page p {
-  margin: 10px 0;
-  line-height: 1.75rem;
   background-color: rgb(255, 255, 255, 0.1);
-  padding: 15px;
   border-radius: 10px;
+  line-height: 1.75rem;
+  margin: 10px 0;
+  padding: 15px;
+}
+@media screen and (max-width: 430px) {
+  .bio-page {
+    display: flex;
+    margin: 25px auto 0;
+    padding: 0;
+    width: 300px;
+  }
 }
 </style>
