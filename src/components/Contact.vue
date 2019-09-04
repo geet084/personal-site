@@ -41,9 +41,15 @@ export default {
   },
   methods: {
     handleSubmit() {
-      let { sender, subject, message } = this.form;
+      const { sender, subject, message } = this.form;
+      const emailWarning = "Please input your email";
+      const subjectWarning = "Please input a subject";
+      const messageWarning = "Please include a message";
 
-      if (sender !== "" && subject !== "" && message !== "") {
+      if (sender === "") this.postResponse = emailWarning;
+      else if (subject === "") this.postResponse = subjectWarning;
+      else if (message === "") this.postResponse = messageWarning;
+      else {
         this.$http
           .post(process.env.VUE_APP_BACKEND_URL, {
             sender,
