@@ -110,7 +110,6 @@ export default {
 
 .highlights-page {
   height: 67vh;
-  margin-top: 25px;
   overflow: auto;
 }
 .projects {
@@ -170,35 +169,20 @@ export default {
   text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
     1px 1px 0 #000;
 }
-.hide {
-  display: none;
-}
-.hidden {
-  visibility: hidden;
-}
 .projects span {
   width: 300px;
 }
-.arrow {
-  color: rgb(189, 29, 29);
-  text-align: center;
-  margin: 0px;
-}
+
 .btm-arrow {
   box-shadow: inset 0px -20px 10px 3px rgb(13, 13, 13);
-  position: sticky;
   content: "";
   display: inline-block;
   width: 305px;
-  bottom: -2px;
 }
 .top-arrow {
-  box-shadow: inset 0px 20px 5px 0px rgb(13, 13, 13);
-  position: sticky;
   display: inline-block;
   content: "";
   width: 305px;
-  top: 0px;
   z-index: 1;
 }
 @media screen and (max-width: 462px) {
