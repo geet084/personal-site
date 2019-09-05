@@ -2,11 +2,11 @@
   <div class="content" v-on:scroll="handleScrollArrows">
     <span class="arrow top-arrow hide">▲</span>
     <span class="top">
-      <a class="link-long" target="_blank" :href="site" v-if="site !== ''">Deployed Site</a>
-      <a class="link-short" target="_blank" :href="site" v-if="site !== ''">Site</a>
+      <a class="regular-size" target="_blank" :href="site" v-if="site !== ''">Deployed Site</a>
+      <a class="mobile-size" target="_blank" :href="site" v-if="site !== ''">Site</a>
       <h4>{{title}}</h4>
-      <a class="link-long" target="_blank" :href="repo" v-if="repo !== ''">GitHub Repo</a>
-      <a class="link-short" target="_blank" :href="repo" v-if="repo !== ''">Repo</a>
+      <a class="regular-size" target="_blank" :href="repo" v-if="repo !== ''">GitHub Repo</a>
+      <a class="mobile-size" target="_blank" :href="repo" v-if="repo !== ''">Repo</a>
     </span>
     <p v-for="paragraph in paragraphs" :key="paragraph">{{ paragraph }}</p>
     <span class="arrow btm-arrow hide">▼</span>
@@ -81,38 +81,11 @@ export default {
   font-size: 0.85rem;
   font-weight: 400;
 }
-.hide {
-  display: none;
-}
-.hidden {
-  visibility: hidden;
-}
-.arrow {
-  color: rgb(189, 29, 29);
-  text-align: center;
-  margin: 0px;
-}
 .btm-arrow {
-  border-radius: 0 0 10px 10px;
   box-shadow: inset 0px -20px 10px 3px rgb(242, 242, 242);
-  position: sticky;
-  bottom: 0px;
 }
 .top-arrow {
   border-radius: 10px 10px 0 0;
   box-shadow: inset 0px 20px 10px -3px rgb(242, 242, 242);
-  position: sticky;
-  top: 0px;
-}
-.link-short {
-  display: none;
-}
-@media screen and (max-width: 600px) {
-  .link-long {
-    display: none;
-  }
-  .link-short {
-    display: inline-block;
-  }
 }
 </style>
