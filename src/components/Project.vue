@@ -31,8 +31,8 @@ export default {
       const content = window.document.querySelector(".content");
       const downArrow = document.querySelector("div.content .btm-arrow");
       const upArrow = document.querySelector("div.content .top-arrow");
-      const distToBtm = content.scrollHeight - 300 - content.scrollTop;
-      const isScrollable = content.scrollHeight > 305;
+      const distToBtm = content.scrollHeight - content.offsetHeight - content.scrollTop;
+      const isScrollable = content.scrollHeight > 0;
 
       if (content.scrollTop > 22) upArrow.classList.remove("hide");
       else upArrow.classList.add("hide");
