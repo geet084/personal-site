@@ -1,5 +1,5 @@
 <template>
-  <article class="bio-page" v-on:scroll="handleScrollArrows">
+  <article class="bio-page text-page" v-on:scroll="handleScrollArrows">
     <span class="arrow top-arrow hide">▲</span>
     <p>
       Travis Gee is an adventurer and seeker of interesting things. An avid offroad explorer, he likes to take his modified Jeep into the mountains to find new ways to appreciate the beauty of nature. Some times it is hidden where few people have gone and behind very narrow dirt roads with rocks as tall as your waist 12,000 feet up on the side of a mountain. Other times it is just off the highway for everyone to see.
@@ -46,57 +46,7 @@ export default {
 </script>
 
 <style scoped>
-.bio-page {
-  color: rgb(255, 255, 255);
-  display: flex;
-  flex-direction: column;
-  height: 67vh;
-  margin-top: 25px;
-  overflow: auto;
-  padding: 0 15%;
-  text-align: left;
-}
 .bio-page p {
-  background-color: rgb(255, 255, 255, 0.1);
-  border-radius: 10px;
-  line-height: 1.75rem;
   margin: 10px 0;
-  padding: 15px;
-}
-.hide {
-  display: none;
-}
-.hidden {
-  visibility: hidden;
-}
-.arrow {
-  color: rgb(189, 29, 29);
-  text-align: center;
-  margin: 0px;
-}
-.btm-arrow {
-  border-radius: 0 0 10px 10px;
-  box-shadow: inset 0px -20px 10px 3px rgb(33, 33, 33);
-  position: sticky;
-  bottom: -2px;
-  margin-top: -22px;
-}
-.top-arrow {
-  box-shadow: inset 0px 20px 5px 0px rgb(13, 13, 13);
-  position: sticky;
-  top: 0px;
-}
-@media screen and (max-width: 430px) {
-  .bio-page {
-    display: flex;
-    margin: 25px auto 0;
-    padding: 0;
-    width: 300px;
-  }
-}
-@media screen and (max-height: 600px) {
-  .bio-page {
-    height: 57vh;
-  }
 }
 </style>

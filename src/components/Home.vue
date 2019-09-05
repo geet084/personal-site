@@ -1,5 +1,5 @@
 <template>
-  <article class="home" v-on:scroll="handleScrollArrows">
+  <article class="home text-page" v-on:scroll="handleScrollArrows">
     <span class="arrow top-arrow hide">▲</span>
     <h2>Hello and welcome!</h2>
     <p>
@@ -41,61 +41,8 @@ export default {
 </script>
 
 <style scoped>
-.home {
-  color: rgb(255, 255, 255);
-  display: flex;
-  flex-direction: column;
-  height: 67vh;
-  margin-top: 25px;
-  padding: 0 15%;
-  overflow: auto;
-  text-align: left;
-}
 .home h2 {
   margin-bottom: 20px;
   text-align: center;
-}
-.home p {
-  background-color: rgb(255, 255, 255, 0.1);
-  border-radius: 10px;
-  color: rgb(255, 255, 255);
-  line-height: 1.75rem;
-  padding: 15px;
-}
-.hide {
-  display: none;
-}
-.hidden {
-  visibility: hidden;
-}
-.arrow {
-  color: rgb(189, 29, 29);
-  text-align: center;
-  margin: 0px;
-}
-.btm-arrow {
-  border-radius: 0 0 10px 10px;
-  box-shadow: inset 0px -20px 10px 3px rgb(33, 33, 33);
-  position: sticky;
-  bottom: -2px;
-  margin-top: -22px;
-}
-.top-arrow {
-  box-shadow: inset 0px 20px 5px 0px rgb(13, 13, 13);
-  position: sticky;
-  top: 0px;
-}
-@media screen and (max-width: 430px) {
-  .home {
-    display: flex;
-    margin: 25px auto 0;
-    padding: 0;
-    width: 300px;
-  }
-}
-@media screen and (max-height: 600px) {
-  .home {
-    height: 57vh;
-  }
 }
 </style>
