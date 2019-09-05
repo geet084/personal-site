@@ -20,8 +20,6 @@ export default {
   position: fixed;
   bottom: 10px;
   right: 10px;
-  /* bottom: 30px;
-  right: 30px; */
 }
 i {
   color: rgb(255, 255, 255);
