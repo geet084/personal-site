@@ -11,26 +11,26 @@
           />
           <input v-model="form.subject" id="subject" type="text" placeholder="SUBJECT" />
           <textarea
-            class="long-text"
+            class="regular-size"
             v-model="form.message"
             name="message"
             id="message"
             cols="30"
-            rows="10"
+            rows="12"
             placeholder="MESSAGE"
           ></textarea>
           <textarea
-            class="short-text"
+            class="mobile-size"
             v-model="form.message"
             name="message"
             id="message"
             cols="30"
-            rows="7"
+            rows="8"
             placeholder="MESSAGE"
           ></textarea>
           <button class="submit-btn" @click.prevent="handleSubmit">Send Email</button>
         </form>
-        <p class="post-res">{{this.formFeedback}}</p>
+        <p class="form-feedback">{{this.formFeedback}}</p>
       </div>
     </section>
   </article>
@@ -87,7 +87,7 @@ export default {
 
 <style scoped>
 .contact-page {
-  margin-top: 45px;
+  margin-top: 35px;
 }
 .contact-form {
   background-color: rgb(255, 255, 255, 0.15);
@@ -123,20 +123,9 @@ export default {
   outline: 0;
   background-color: rgb(255, 225, 225);
 }
-.post-res {
+.form-feedback {
   font-size: 1.1rem;
   font-weight: 900;
   color: red;
-}
-.short-text {
-  display: none;
-}
-@media screen and (max-height: 600px) {
-  .long-text {
-    display: none;
-  }
-  .short-text {
-    display: inline-block;
-  }
 }
 </style>
