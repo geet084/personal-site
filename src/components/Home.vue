@@ -77,7 +77,7 @@ export default {
   border-radius: 0 0 10px 10px;
   box-shadow: inset 0px -20px 10px 3px rgb(33, 33, 33);
   position: sticky;
-  bottom: 0px;
+  bottom: -2px;
   margin-top: -22px;
 }
 .top-arrow {
