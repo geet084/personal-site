@@ -93,4 +93,9 @@ export default {
     width: 300px;
   }
 }
+@media screen and (max-height: 600px) {
+  .home {
+    height: 57vh;
+  }
+}
 </style>
