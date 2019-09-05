@@ -11,11 +11,21 @@
           />
           <input v-model="form.subject" id="subject" type="text" placeholder="SUBJECT" />
           <textarea
+            class="long-text"
             v-model="form.message"
             name="message"
             id="message"
             cols="30"
             rows="10"
+            placeholder="MESSAGE"
+          ></textarea>
+          <textarea
+            class="short-text"
+            v-model="form.message"
+            name="message"
+            id="message"
+            cols="30"
+            rows="7"
             placeholder="MESSAGE"
           ></textarea>
           <button class="submit-btn" @click.prevent="handleSubmit">Send Email</button>
@@ -117,5 +127,16 @@ export default {
   font-size: 1.1rem;
   font-weight: 900;
   color: red;
+}
+.short-text {
+  display: none;
+}
+@media screen and (max-height: 600px) {
+  .long-text {
+    display: none;
+  }
+  .short-text {
+    display: inline-block;
+  }
 }
 </style>
