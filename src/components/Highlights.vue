@@ -102,7 +102,7 @@ export default {
   content: "";
   height: 430px;
   position: absolute;
-  top: 0;
+  top: -20px;
   width: 65%;
   z-index: 2;
 }
@@ -110,13 +110,14 @@ export default {
 .highlights-page {
   height: 67vh;
   overflow: auto;
+  margin-top: 15px;
 }
 .projects {
   align-items: center;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  margin: 0 15%;
+  margin: -15px 0 15%;
 }
 .project {
   align-items: center;
@@ -171,7 +172,6 @@ export default {
 .projects span {
   width: 300px;
 }
-
 .btm-arrow {
   box-shadow: inset 0px -20px 10px 3px rgb(13, 13, 13);
   content: "";
@@ -193,7 +193,7 @@ export default {
     left: 50%;
     margin: -49px -144px;
     position: fixed;
-    top: 309px;
+    top: 300px;
     width: 286px;
   }
 }
@@ -202,7 +202,7 @@ export default {
     height: 60vh;
   }
   .expanded::before {
-    height: 350px;
+    height: 360px;
   }
   .proj-content {
     height: 220px;
