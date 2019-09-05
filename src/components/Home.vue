@@ -24,8 +24,8 @@ export default {
   methods: {
     handleScrollArrows() {
       const content = window.document.querySelector(".home");
-      const downArrow = document.querySelector("article.home .btm-arrow");
-      const upArrow = document.querySelector("article.home .top-arrow");
+      const downArrow = document.querySelector(".btm-arrow");
+      const upArrow = document.querySelector(".top-arrow");
       const distToBtm = content.scrollHeight - content.offsetHeight - content.scrollTop;
       const isScrollable = content.scrollHeight > 0;
       
