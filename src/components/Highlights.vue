@@ -190,7 +190,7 @@ export default {
   content: "";
   display: inline-block;
   width: 305px;
-  bottom: 0px;
+  bottom: -2px;
 }
 .top-arrow {
   box-shadow: inset 0px 20px 5px 0px rgb(13, 13, 13);
