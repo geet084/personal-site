@@ -1,5 +1,5 @@
 <template>
-  <div class="content" v-on:scroll="handleScrollArrows">
+  <div class="proj-content" v-on:scroll="handleScrollArrows">
     <span class="arrow top-arrow hide">▲</span>
     <span class="top">
       <a class="regular-size" target="_blank" :href="site" v-if="site !== ''">Deployed Site</a>
@@ -28,9 +28,9 @@ export default {
   },
   methods: {
     handleScrollArrows() {
-      const content = window.document.querySelector(".content");
-      const downArrow = document.querySelector("div.content .btm-arrow");
-      const upArrow = document.querySelector("div.content .top-arrow");
+      const content = window.document.querySelector(".proj-content");
+      const downArrow = document.querySelector("div.proj-content .btm-arrow");
+      const upArrow = document.querySelector("div.proj-content .top-arrow");
       const distToBtm = content.scrollHeight - content.offsetHeight - content.scrollTop;
       const isScrollable = content.scrollHeight > 0;
 
@@ -47,7 +47,7 @@ export default {
 </script>
 
 <style scoped>
-.content {
+.proj-content {
   position: absolute;
   top: 120px;
   left: 19%;
@@ -65,18 +65,18 @@ export default {
   text-align: left;
   border: 1px solid rgb(101, 101, 101);
 }
-.content a {
+.proj-content a {
   color: rgb(189, 29, 29);
 }
-.content a:hover {
+.proj-content a:hover {
   color: rgb(0, 64, 255);
 }
-.content .top {
+.proj-content .top {
   margin: 5px 0;
   display: flex;
   justify-content: space-around;
 }
-.content p {
+.proj-content p {
   margin: 10px 10px 0;
   font-size: 0.85rem;
   font-weight: 400;

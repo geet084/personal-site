@@ -62,16 +62,15 @@ export default {
     },
     handleScrollArrows() {
       const content = window.document.querySelector(".highlights-page");
-      const downArrow = document.querySelector("article.highlights-page .btm-arrow");
-      const upArrow = document.querySelector("article.highlights-page .top-arrow");
+      const downArrow = document.querySelector(".btm-arrow");
+      const upArrow = document.querySelector(".top-arrow");
       const distToBtm = content.scrollHeight - content.offsetHeight - content.scrollTop;
       const isScrollable = content.scrollHeight > 0;
       
       if (content.scrollTop > 22) upArrow.classList.remove("hidden");
       else upArrow.classList.add("hidden");
 
-      if (isScrollable && distToBtm > 5)
-        downArrow.classList.remove("hide", "hidden");
+      if (isScrollable && distToBtm > 5) downArrow.classList.remove("hide", "hidden");
       else if (distToBtm <= 5) downArrow.classList.add("hidden");
       else downArrow.classList.add("hide");
     }
@@ -190,7 +189,7 @@ export default {
   .expanded::before {
     width: 300px;
   }
-  .content {
+  .proj-content {
     left: 50%;
     margin: -49px -144px;
     position: fixed;
@@ -205,7 +204,7 @@ export default {
   .expanded::before {
     height: 350px;
   }
-  .content {
+  .proj-content {
     height: 220px;
   }
 }
