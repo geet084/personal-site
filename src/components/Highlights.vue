@@ -219,10 +219,10 @@ export default {
     height: 60vh;
   }
   .expanded::before {
-    height: 355px;
+    height: 350px;
   }
   .content {
-    height: 225px;
+    height: 220px;
   }
 }
 </style>
