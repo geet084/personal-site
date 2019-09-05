@@ -10,7 +10,6 @@
 <script>
 import Header from "./components/Header.vue";
 import Nav from "./components/Nav.vue";
-import Home from "./components/Home.vue";
 import Footer from "./components/Footer.vue";
 
 export default {
@@ -18,7 +17,6 @@ export default {
   components: {
     Header,
     Nav,
-    Home,
     Footer
   }
 };
