@@ -12,7 +12,7 @@ export default {
 
 <style scoped>
 .header {
-  margin: -40px 0 15px 0;
+  padding: 20px 0 5px;
 }
 h1 {
   font-family: "Special Elite", cursive;
