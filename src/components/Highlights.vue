@@ -1,7 +1,7 @@
 <template>
   <article class="highlights-page" v-on:scroll="handleScrollArrows">
-    <span class="arrow arrow-top hide">▲</span>
     <div class="projects">
+      <span class="arrow arrow-top hide">▲</span>
       <section
         @click="toggleProject"
         v-for="(project, index) in this.projects"
@@ -17,8 +17,8 @@
           :paragraphs="project.paragraphs"
         />
       </section>
+      <span class="arrow arrow-btm hide">▼</span>
     </div>
-    <span class="arrow arrow-btm hide">▼</span>
   </article>
 </template>
 
@@ -102,7 +102,7 @@ export default {
   content: "";
   height: 430px;
   position: absolute;
-  top: -20px;
+  top: 0;
   width: 65%;
   z-index: 2;
 }
@@ -168,18 +168,14 @@ export default {
   text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
     1px 1px 0 #000;
 }
-.projects span {
-  width: 300px;
-}
 .arrow-btm {
-  border-radius: 0 0 10px 10px;
   bottom: -3px;
   margin-top: -22px;
   position: sticky;
   box-shadow: inset 0px -20px 10px 3px rgb(13, 13, 13);
   content: "";
   display: inline-block;
-  width: 305px;
+  width: 91%;
 }
 .arrow-top {
   box-shadow: inset 0px 20px 5px 0px rgb(13, 13, 13);
@@ -187,7 +183,7 @@ export default {
   top: 0px;
   display: inline-block;
   content: "";
-  width: 305px;
+  width: 91%;
   z-index: 1;
 }
 @media screen and (max-width: 462px) {
@@ -202,10 +198,15 @@ export default {
     top: 300px;
     width: 286px;
   }
+  .arrow-btm,
+  .arrow-top {
+    width: 300px;
+  }
 }
 @media screen and (max-height: 600px) {
   .highlights-page {
     height: 60vh;
+    top: -20px;
   }
   .expanded::before {
     height: 360px;
