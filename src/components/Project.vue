@@ -48,22 +48,22 @@ export default {
 
 <style scoped>
 .proj-content {
-  position: absolute;
-  top: 120px;
-  left: 19%;
-  z-index: 3;
   background-color: #ffffffd9;
-  color: rgb(189, 29, 29);
-  font-size: 1rem;
-  font-weight: 600;
-  width: 62%;
-  overflow: auto;
-  height: 300px;
+  border: 1px solid rgb(101, 101, 101);
   border-radius: 10px;
+  color: rgb(189, 29, 29);
   display: flex;
   flex-direction: column;
+  font-size: 1rem;
+  font-weight: 600;
+  height: 300px;
+  left: 19%;
+  overflow: auto;
+  position: absolute;
   text-align: left;
-  border: 1px solid rgb(101, 101, 101);
+  top: 120px;
+  width: 62%;
+  z-index: 3;
 }
 .proj-content a {
   color: rgb(189, 29, 29);
@@ -72,14 +72,14 @@ export default {
   color: rgb(0, 64, 255);
 }
 .proj-content .top {
-  margin: 5px 0;
   display: flex;
   justify-content: space-around;
+  margin: 5px 0;
 }
 .proj-content p {
-  margin: 10px 10px 0;
   font-size: 0.85rem;
   font-weight: 400;
+  margin: 10px 10px 0;
 }
 .btm-arrow {
   box-shadow: inset 0px -20px 10px 3px rgb(242, 242, 242);
@@ -87,5 +87,16 @@ export default {
 .top-arrow {
   border-radius: 10px 10px 0 0;
   box-shadow: inset 0px 20px 10px -3px rgb(242, 242, 242);
+}
+.mobile-size {
+  display: none;
+}
+@media screen and (max-width: 600px) {
+  .regular-size {
+    display: none;
+  }
+  .mobile-size {
+    display: inline-block;
+  }
 }
 </style>

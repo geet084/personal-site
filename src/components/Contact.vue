@@ -128,4 +128,15 @@ export default {
   font-weight: 900;
   color: red;
 }
+.mobile-size {
+  display: none;
+}
+@media screen and (max-height: 600px) {
+  .regular-size {
+    display: none;
+  }
+  .mobile-size {
+    display: inline-block;
+  }
+}
 </style>

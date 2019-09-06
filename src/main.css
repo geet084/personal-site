@@ -47,27 +47,11 @@
 }
 /*****/
 
-/* DEFAULT PROPERTY FOR ELEMENTS SIZED SMALLER FOR MOBILE VIEW */
-.mobile-size {
-  display: none;
-}
-/*****/
-
 /* 
   SHARED MEDIA QUERIES 
 */
 
 @media screen and (max-height: 600px) {
-  /* SWITCHES ELEMENTS DISPLAYED
-      CONTACT -- TEXTAREA EMAIL MESSAGE
-      PROJECT -- WEBSITE / GITHUB LINKS */
-  .regular-size {
-    display: none;
-  }
-  .mobile-size {
-    display: inline-block;
-  }
-  
   /* SHARED MOBILE STYLING FOR HOME AND BIO COMPONENT */
   .text-page {
     height: 57vh;
