@@ -66,7 +66,7 @@ export default {
       const upArrow = document.querySelector(".arrow-top");
       const distToBtm = content.scrollHeight - content.offsetHeight - content.scrollTop;
       const isScrollable = content.scrollHeight > 0;
-
+      
       if (content.scrollTop > 22) upArrow.classList.remove("hidden");
       else upArrow.classList.add("hidden");
 
@@ -195,7 +195,7 @@ export default {
     left: 50%;
     margin: -49px -144px;
     position: fixed;
-    top: 300px;
+    top: 310px;
     width: 286px;
   }
   .arrow-btm,
@@ -203,9 +203,9 @@ export default {
     width: 300px;
   }
 }
-@media screen and (max-height: 600px) {
+@media screen and (max-height: 515px) {
   .highlights-page {
-    height: 60vh;
+    height: 63vh;
     top: -20px;
   }
   .expanded::before {
@@ -213,6 +213,11 @@ export default {
   }
   .proj-content {
     height: 220px;
+  }
+}
+@media screen and (max-height: 400px) {
+  .highlights-page {
+    height: 54vh;
   }
 }
 </style>
