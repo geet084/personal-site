@@ -1,6 +1,6 @@
 <template>
   <article class="highlights-page" v-on:scroll="handleScrollArrows">
-    <span class="arrow top-arrow hide">▲</span>
+    <span class="arrow arrow-top hide">▲</span>
     <div class="projects">
       <section
         @click="toggleProject"
@@ -18,7 +18,7 @@
         />
       </section>
     </div>
-    <span class="arrow btm-arrow hide">▼</span>
+    <span class="arrow arrow-btm hide">▼</span>
   </article>
 </template>
 
@@ -62,11 +62,11 @@ export default {
     },
     handleScrollArrows() {
       const content = window.document.querySelector(".highlights-page");
-      const downArrow = document.querySelector(".btm-arrow");
-      const upArrow = document.querySelector(".top-arrow");
+      const downArrow = document.querySelector(".arrow-btm");
+      const upArrow = document.querySelector(".arrow-top");
       const distToBtm = content.scrollHeight - content.offsetHeight - content.scrollTop;
       const isScrollable = content.scrollHeight > 0;
-      
+
       if (content.scrollTop > 22) upArrow.classList.remove("hidden");
       else upArrow.classList.add("hidden");
 
@@ -106,7 +106,6 @@ export default {
   width: 65%;
   z-index: 2;
 }
-
 .highlights-page {
   height: 67vh;
   overflow: auto;
@@ -117,7 +116,7 @@ export default {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  margin: -15px 0 15%;
+  margin: -15px 15% 0;
 }
 .project {
   align-items: center;
@@ -172,13 +171,20 @@ export default {
 .projects span {
   width: 300px;
 }
-.btm-arrow {
+.arrow-btm {
+  border-radius: 0 0 10px 10px;
+  bottom: -3px;
+  margin-top: -22px;
+  position: sticky;
   box-shadow: inset 0px -20px 10px 3px rgb(13, 13, 13);
   content: "";
   display: inline-block;
   width: 305px;
 }
-.top-arrow {
+.arrow-top {
+  box-shadow: inset 0px 20px 5px 0px rgb(13, 13, 13);
+  position: sticky;
+  top: 0px;
   display: inline-block;
   content: "";
   width: 305px;
