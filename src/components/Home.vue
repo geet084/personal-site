@@ -1,21 +1,27 @@
 <template>
   <article class="home text-page" v-on:scroll="handleScrollArrows">
-    <span class="arrow top-arrow hide">▲</span>
+    <span class="arrow top-arrow" :class="[isTop ? 'hide' : '']">▲</span>
     <h2>Hello and welcome!</h2>
     <p class="profile-img">
-      <img src="../assets/profile.png" alt="profile">
+      <img src="../assets/profile.png" alt="profile" />
       <span>Looking over the edge of the cliff at Top of the World in Moab</span>
     </p>
     <p>
       Travis is an avid explorer and collector of random knowledge. New ideas and challenges intrigue him, allowing him to learn and broaden his knowledge. His previous professional background in automotive parts inventory management allowed him to seek out better and more efficient solutions to the problems he faced. He chose to become a software engineer because although he was able to identify and solve, or propose solutions to these problems, he found myself becoming more interested in how they were implemented in terms of software. He now looks forward to developing an expertise in software design, while also solving unique and interesting challenges along the way.
     </p>
-    <span class="arrow btm-arrow hide">▼</span>
+    <span class="arrow btm-arrow" :class="[isBtm ? 'hide' : '']">▼</span>
   </article>
 </template>
 
 <script>
 export default {
   name: "Home",
+  data() {
+    return {
+      isTop: true,
+      isBtm: false
+    };
+  },
   mounted() {
     this.handleScrollArrows();
   },
@@ -27,18 +33,11 @@ export default {
   },
   methods: {
     handleScrollArrows() {
-      const content = window.document.querySelector(".home");
-      const downArrow = document.querySelector(".btm-arrow");
-      const upArrow = document.querySelector(".top-arrow");
-      const distToBtm = content.scrollHeight - content.offsetHeight - content.scrollTop;
-      const isScrollable = content.scrollHeight > 0;
+      const { scrollHeight, offsetHeight, scrollTop } = this.$el;
+      const distToBtm = scrollHeight - offsetHeight - scrollTop;
       
-      if (content.scrollTop > 22) upArrow.classList.remove("hide");
-      else upArrow.classList.add("hide");
-
-      if (isScrollable && distToBtm > 5) downArrow.classList.remove("hide", "hidden");
-      else if (distToBtm <= 5) downArrow.classList.add("hidden");
-      else downArrow.classList.add("hide");
+      this.isTop = scrollTop < 22
+      this.isBtm =  distToBtm < 5
     }
   }
 };
@@ -59,7 +58,7 @@ export default {
   align-self: center;
 }
 .profile-img span {
-  font-size: .59rem;
+  font-size: 0.59rem;
   margin-top: -30px;
   text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
     1px 1px 0 #000;
