@@ -1,6 +1,9 @@
 <template>
   <article class="home text-page" v-on:scroll="handleScrollArrows">
-    <span class="arrow top-arrow" :class="[isTop ? 'hide' : '']">▲</span>
+    <span 
+      :style="{width: topArrow > 0 ? '100%' : ''}" 
+      class="arrow top-arrow" :class="[isTop ? 'hide' : '']"
+    >▲</span>
     <h2>Hello and welcome!</h2>
     <p class="profile-img">
       <img src="../assets/profile.png" alt="profile" />
@@ -19,7 +22,8 @@ export default {
   data() {
     return {
       isTop: true,
-      isBtm: false
+      isBtm: false,
+      topArrow: 0
     };
   },
   mounted() {
@@ -33,11 +37,13 @@ export default {
   },
   methods: {
     handleScrollArrows() {
-      const { scrollHeight, offsetHeight, scrollTop } = this.$el;
+      const { scrollHeight, offsetHeight, scrollTop, children } = this.$el;
       const distToBtm = scrollHeight - offsetHeight - scrollTop;
+      const isOverParagraph = scrollHeight - scrollTop - children[3].scrollHeight < 30;
       
-      this.isTop = scrollTop < 22
-      this.isBtm =  distToBtm < 5
+      this.topArrow = isOverParagraph ? children[3].offsetWidth : 0;
+      this.isTop = scrollTop < 22;
+      this.isBtm =  distToBtm < 5;
     }
   }
 };
@@ -68,5 +74,15 @@ export default {
   object-position: 100% 83%;
   width: 100%;
   margin-top: -25px;
+}
+.home .top-arrow {
+  width: 430px;
+  align-self: center;
+}
+@media screen and (max-width: 615px) {
+  .home .top-arrow {
+    width: 100%;
+    /* align-self: center; */
+  }
 }
 </style>
