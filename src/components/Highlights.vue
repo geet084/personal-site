@@ -1,7 +1,7 @@
 <template>
   <article class="highlights-page" v-on:scroll="handleScrollArrows">
     <div class="projects">
-      <span class="arrow arrow-top hide">▲</span>
+      <span class="arrow arrow-top" :class="[isTop ? 'hidden' : '']">▲</span>
       <section
         @click="toggleProject"
         v-for="(project, index) in this.projects"
@@ -17,7 +17,7 @@
           :paragraphs="project.paragraphs"
         />
       </section>
-      <span class="arrow arrow-btm hide">▼</span>
+      <span class="arrow arrow-btm" :class="[isBtm ? 'hidden' : '']">▼</span>
     </div>
   </article>
 </template>
@@ -34,7 +34,9 @@ export default {
   data() {
     return {
       projects,
-      showProject: ""
+      showProject: "",
+      isTop: true,
+      isBtm: false
     };
   },
   mounted() {
@@ -61,18 +63,11 @@ export default {
       this.showProject = this.showProject !== project ? project : "";
     },
     handleScrollArrows() {
-      const content = window.document.querySelector(".highlights-page");
-      const downArrow = document.querySelector(".arrow-btm");
-      const upArrow = document.querySelector(".arrow-top");
-      const distToBtm = content.scrollHeight - content.offsetHeight - content.scrollTop;
-      const isScrollable = content.scrollHeight > 0;
+      const { scrollHeight, offsetHeight, scrollTop } = this.$el;
+      const distToBtm = scrollHeight - offsetHeight - scrollTop;
       
-      if (content.scrollTop > 22) upArrow.classList.remove("hidden");
-      else upArrow.classList.add("hidden");
-
-      if (isScrollable && distToBtm > 5) downArrow.classList.remove("hide", "hidden");
-      else if (distToBtm <= 5) downArrow.classList.add("hidden");
-      else downArrow.classList.add("hide");
+      this.isTop = scrollTop < 22
+      this.isBtm =  distToBtm < 5
     }
   }
 };
