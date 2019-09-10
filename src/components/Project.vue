@@ -1,6 +1,6 @@
 <template>
   <div class="proj-content" v-on:scroll="handleScrollArrows">
-    <span class="arrow top-arrow hide">▲</span>
+    <span class="arrow top-arrow" :class="[isTop ? 'hide' : '']">▲</span>
     <span class="top">
       <a class="regular-size" target="_blank" :href="site" v-if="site !== ''">Deployed Site</a>
       <a class="mobile-size" target="_blank" :href="site" v-if="site !== ''">Site</a>
@@ -9,7 +9,7 @@
       <a class="mobile-size" target="_blank" :href="repo" v-if="repo !== ''">Repo</a>
     </span>
     <p v-for="paragraph in paragraphs" :key="paragraph">{{ paragraph }}</p>
-    <span class="arrow btm-arrow hide">▼</span>
+    <span class="arrow btm-arrow" :class="[isBtm ? 'hide' : '']">▼</span>
   </div>
 </template>
 
@@ -17,6 +17,12 @@
 export default {
   name: "Project",
   props: ["title", "site", "repo", "paragraphs"],
+  data() {
+    return {
+      isTop: true,
+      isBtm: false
+    };
+  },
   mounted() {
     this.handleScrollArrows();
   },
@@ -28,19 +34,11 @@ export default {
   },
   methods: {
     handleScrollArrows() {
-      const content = window.document.querySelector(".proj-content");
-      const downArrow = document.querySelector(".btm-arrow");
-      const upArrow = document.querySelector(".top-arrow");
-      const distToBtm = content.scrollHeight - content.offsetHeight - content.scrollTop;
-      const isScrollable = content.scrollHeight > 0;
-
-      if (content.scrollTop > 22) upArrow.classList.remove("hide");
-      else upArrow.classList.add("hide");
-
-      if (isScrollable && distToBtm > 5)
-        downArrow.classList.remove("hide", "hidden");
-      else if (distToBtm <= 5) downArrow.classList.add("hidden");
-      else downArrow.classList.add("hide");
+      const { scrollHeight, offsetHeight, scrollTop } = this.$el;
+      const distToBtm = scrollHeight - offsetHeight - scrollTop;
+      
+      this.isTop = scrollTop < 22
+      this.isBtm =  distToBtm < 5
     }
   }
 };
