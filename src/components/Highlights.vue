@@ -10,7 +10,7 @@
       >
         <h3>{{project.title}}</h3>
         <Project
-          v-if="showProject===`project${index + 1}`"
+          v-if="currentProject===`project${index + 1}`"
           :title="project.title"
           :site="project.site"
           :repo="project.repo"
@@ -34,7 +34,7 @@ export default {
   data() {
     return {
       projects,
-      showProject: "",
+      currentProject: "none",
       isTop: true,
       isBtm: false
     };
@@ -50,24 +50,19 @@ export default {
   },
   methods: {
     toggleProject({ target }) {
-      let selection = target.closest(".project") || target.closest(".expanded");
+      target.closest("section").classList.toggle("expanded");
+      target.closest("section").classList.toggle("project");
 
-      if (selection.classList.contains("expanded")) {
-        selection.classList.remove("expanded");
-        selection.classList.add("project");
-      } else {
-        selection.classList.add("expanded");
-        selection.classList.remove("project");
-      }
-      let project = selection.classList[0];
-      this.showProject = this.showProject !== project ? project : "";
+      let selected = target.closest("section").classList[0];
+      this.currentProject =
+        selected !== this.currentProject ? selected : "none";
     },
     handleScrollArrows() {
       const { scrollHeight, offsetHeight, scrollTop } = this.$el;
       const distToBtm = scrollHeight - offsetHeight - scrollTop;
-      
-      this.isTop = scrollTop < 22
-      this.isBtm =  distToBtm < 5
+
+      this.isTop = scrollTop < 22;
+      this.isBtm = distToBtm < 5;
     }
   }
 };
