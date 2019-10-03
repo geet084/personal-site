@@ -136,18 +136,22 @@ export default {
   z-index: -1;
 }
 .project1:before {
-  background: url("../assets/turing-mentors.png") no-repeat center;
+  background: url("../assets/gameflix.png") no-repeat center;
   background-size: cover;
 }
 .project2:before {
-  background: url("../assets/palette-picker.png") no-repeat center;
+  background: url("../assets/turing-mentors.png") no-repeat center;
   background-size: cover;
 }
 .project3:before {
-  background: url("../assets/travelr.png") no-repeat center;
+  background: url("../assets/palette-picker.png") no-repeat center;
   background-size: cover;
 }
 .project4:before {
+  background: url("../assets/travelr.png") no-repeat center;
+  background-size: cover;
+}
+.project5:before {
   background: url("../assets/trapper-keeper.png") no-repeat center;
   background-size: cover;
 }
