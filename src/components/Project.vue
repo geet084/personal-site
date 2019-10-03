@@ -46,7 +46,7 @@ export default {
 
 <style scoped>
 .proj-content {
-  background-color: #ffffffd9;
+  background-color: #ffffffec;
   border: 1px solid rgb(101, 101, 101);
   border-radius: 10px;
   color: rgb(189, 29, 29);
