@@ -10,6 +10,16 @@ export default [
     ]
   },
   {
+    title: 'Yahtzee',
+    site: 'https://geet084.github.io/yahtzee/',
+    repo: 'https://github.com/geet084/yahtzee',
+    paragraphs: [
+      'This started as a personal project, based loosely on Yahtzee with Buddies mobile app, to more or less just to see if I could make a game that behaved like a native app using just HTML, CSS and JavaScript. After all, using frameworks like React and Vue definitely make your life easier, but I was curious how hard it would be to do it with the least number of tools as possible.',
+      'After a struggle in remembering how to set everything up when there\'s no frameworks involved, the fun part came when trying to set up a Progressive Web App with it\'s manifest and service worker. It was a challenge, but it was all the more rewarding to get it working (verified on Android so far) and behaving like you would expect from a native app.',
+      'As I continue to work on this, I would like to incorporate more traditional app functionality like being able to play against a friend by incorporating websockets, as well as a database at some point for users, high scores, etc.',
+    ]
+  },
+  {
     title: 'Turing Mentors',
     site: 'https://turing-mentors.herokuapp.com/',
     repo: 'https://github.com/geet084/turing-mentors',
@@ -20,16 +30,6 @@ export default [
     ]
   },
   {
-    title: 'Palette Picker',
-    site: 'https://palette-picker-1810.herokuapp.com/',
-    repo: 'https://github.com/geet084/fe-palette-picker',
-    paragraphs: [
-      'My first project where we developed an entire fullstack application from start to finish. Tasked with building a backend server along with using continuous integration for our API and building a frontend site that was simple and intuitive to use.',
-      'For the server we used the standard CRUD endpoints as well as adding another queryable GET endpoint that would search for projects by name. We were also able to implement TDD during this portion of the project, to a high degree of success.',
-      'On the frontend we sought to build a user interface that was easy to understand and use while also being a stylish recreation of the website Coolors.',
-    ]
-  },
-  {
     title: 'Travelr',
     site: 'https://travelr-fe.herokuapp.com/',
     repo: 'https://github.com/geet084/travelr',
@@ -37,6 +37,16 @@ export default [
       'For my last solo project of Turing, I wanted to build an application that would illustrate time and distance in a unique way. Many people do not realize how far they are traveling every second, due to the Earth, Sun, Solar System and Galaxy all moving through space.',
       'I struggled a lot with Date and Time issues during the project, but was very pleased when I implemented moment.js. This gives an accurate representation of distance covered through space since a given date.',
       'As I continue to work on this, I would like to have a visual representation of distance pop up in correlation to the number. For example 238,000 miles and a picture of the moon.',
+    ]
+  },
+  {
+    title: 'Palette Picker',
+    site: 'https://palette-picker-1810.herokuapp.com/',
+    repo: 'https://github.com/geet084/fe-palette-picker',
+    paragraphs: [
+      'My first project where we developed an entire fullstack application from start to finish. Tasked with building a backend server along with using continuous integration for our API and building a frontend site that was simple and intuitive to use.',
+      'For the server we used the standard CRUD endpoints as well as adding another queryable GET endpoint that would search for projects by name. We were also able to implement TDD during this portion of the project, to a high degree of success.',
+      'On the frontend we sought to build a user interface that was easy to understand and use while also being a stylish recreation of the website Coolors.',
     ]
   },
   {
