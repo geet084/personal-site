@@ -52,6 +52,12 @@ export default {
     toggleProject({ target }) {
       target.closest("section").classList.toggle("expanded");
       target.closest("section").classList.toggle("project");
+      
+      const projs = Array.from(document.querySelectorAll('section'));
+      projs.map(proj => proj.classList.toggle('hidden'));
+      target.closest("section").classList.toggle('hidden');
+      const btmArrow = document.querySelector('.arrow-btm')
+      if(!this.isBtm) btmArrow.classList.toggle('hidden')
 
       let selected = target.closest("section").classList[0];
       this.currentProject =
@@ -69,6 +75,9 @@ export default {
 </script>
 
 <style scoped>
+.hidden {
+  visibility: hidden;
+}
 .expanded {
   align-items: center;
   border-radius: 15px;
