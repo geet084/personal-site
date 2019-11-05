@@ -140,11 +140,11 @@ export default {
   background-size: cover;
 }
 .project2:before {
-  background: url("../assets/turing-mentors.png") no-repeat center;
+  background: url("../assets/yahtzee.png") no-repeat center;
   background-size: cover;
 }
 .project3:before {
-  background: url("../assets/palette-picker.png") no-repeat center;
+  background: url("../assets/turing-mentors.png") no-repeat center;
   background-size: cover;
 }
 .project4:before {
@@ -152,6 +152,10 @@ export default {
   background-size: cover;
 }
 .project5:before {
+  background: url("../assets/palette-picker.png") no-repeat center;
+  background-size: cover;
+}
+.project6:before {
   background: url("../assets/trapper-keeper.png") no-repeat center;
   background-size: cover;
 }
