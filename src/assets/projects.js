@@ -5,7 +5,7 @@ export default [
     repo: 'https://github.com/geet084/gameflix',
     paragraphs: [
       'I like to play games, especially board games, but it can be difficult to find new ones that catch your interest. During a conversation with a friend, we realized that not only is finding new games not easy, we also had a hard time keeping track of what games we owned or liked between us.',
-      'With a board game API in hand, the idea exolved into a version of Netflix where you can browse and search through board games. Additionally, there would be a social aspect as well where you can see what games your friends have and like. This would facilitate game events where you could recommend they bring certain games as well as helping to narrow a selection of games down to what can be played with the number of players and time they would take.',
+      'With a board game API in hand, the idea evolved into a version of Netflix where you can browse and search through board games. Additionally, there would be a social aspect as well where you can see what games your friends have and like. This would facilitate game events where you could recommend they bring certain games as well as helping to narrow a selection of games down to what can be played with the number of players and time they would take.',
       'This is still a work in progress - I am building a database to correlate games owned, favorites and users. I would also like to have the ability to track game playing activity in a fun way as well.'
     ]
   },
