@@ -33,7 +33,7 @@ app.post('/api/v1/mail', (req, res) => {
 
   transporter.sendMail(mailOptions, function (error, info) {
     if (error) {
-      console.log(error);
+      console.log(error, info);
       res.status(500).json(`Oops! Your email was not sent...`);
     } else res.status(200).json('Success! Your email was sent!');
   });
