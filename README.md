@@ -7,8 +7,4 @@
  - Vue Router
  - HTML / CSS
  - Axios
-
- #### Back End
- - Express
- - Nodemailer
- - Dotenv
+ - EmailJS
