@@ -8,3 +8,6 @@
  - HTML / CSS
  - Axios
  - EmailJS
+
+ ## Developer
+[Travis Gee](https://github.com/geet084)
