@@ -27,6 +27,8 @@
 </template>
 
 <script>
+import emailjs from 'emailjs-com';
+
 export default {
   name: "Contact",
   data() {
@@ -60,13 +62,21 @@ export default {
       else if (subject === "") this.formFeedback = subjectWarning;
       else if (message === "") this.formFeedback = messageWarning;
       else {
-        this.$http
-          .post(process.env.VUE_APP_BACKEND_URL, {
-            sender: email,
-            subject,
-            message
-          })
-          .then(res => (this.formFeedback = res.data));
+        const serviceID = process.env.VUE_APP_SERVICE_ID
+        const template = process.env.VUE_APP_TEMPLATE_ID
+        const emailUID = process.env.VUE_APP_EMAIL_UID
+        const templateParams = {
+          from_name: subject,
+          message_html: message,
+          reply_to: email
+        }
+
+        emailjs.send(serviceID, template, templateParams, emailUID)
+          .then(res => {
+            this.formFeedback = 'Success! Your email was sent!'
+          }, error => {
+            this.formFeedback = 'Oops! Your email was not sent...'
+          });
 
         Object.keys(this.form).forEach(key => (this.form[key] = ""));
       }
